@@ -4,8 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/wamp/www/traductor/app/models/UsersTrack.php</file>
+            <file>file:/C:/wamp/www/traductor/app/controllers/ErrorsController.php</file>
             <file>file:/C:/wamp/www/traductor/app/routes.php</file>
             <file>file:/C:/wamp/www/traductor/app/facades/facUsersTrack.php</file>
+            <file>file:/C:/wamp/www/traductor/app/views/errors.blade.php</file>
             <file>file:/C:/wamp/www/traductor/app/models/User.php</file>
             <file>file:/C:/wamp/www/traductor/app/controllers/traductor/HomeController.php</file>
             <file>file:/C:/wamp/www/traductor/app/controllers/AuthController.php</file>

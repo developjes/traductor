@@ -20,16 +20,35 @@ Route::get('/', function()
 Route::get('login', 'AuthController@showLogin');
 // Validamos los datos de inicio de sesión.
 Route::post('login', 'AuthController@postLogin');
-
+/**errores*/
+Route::get('errors',function(){
+    return "error";
+});
 
 /******************************************************************************/
 /**rutas del publico***********************************************************/
 
 /**************************************************************************/
-
+Route::get('errors',function(){
+            return "acaaa";
+        });
 // Nos indica que las rutas que están dentro de él sólo serán mostradas si antes el usuario se ha autenticado.
 Route::group(array('before' => 'auth'), function()
 {
+    /**track***/
+    $facUsersTrack = new facUsersTrack();
+    if(!
+    $facUsersTrack->setInsertUsersTrack((object)array(
+        'url_track'=>"acaaa",
+        'ip_address'=>"ottaaa"
+    ))){
+        App::make('ErrorsController')->index();
+        Route::get('errors',function(){
+            return "acaaa";
+        });
+    }else{
+    
+    
     // Esta será nuestra ruta de bienvenida.
     Route::get('root/home',"root\HomeController@index");
     // Esta será nuestra ruta de bienvenida.
@@ -41,6 +60,7 @@ Route::group(array('before' => 'auth'), function()
     
     // Esta ruta nos servirá para cerrar sesión.
     Route::get('logout', 'AuthController@logOut');
+    }
     
     /**************************************************************************/
     /**rutas del root**********************************************************/
@@ -61,10 +81,8 @@ Route::group(array('before' => 'auth'), function()
     /**rutas del traductor******************************************************/
     
     /**************************************************************************/
+    Route::get('errors',function(){
+            return "acaaa";
+        });
     
-    /**track***/
-    $UsersTrack = new UsersTrack();$UsersTrack->created_By = 1;
-    
-    $UsersTrack->url_track = "holaa";
-    $UsersTrack->save();
 });
